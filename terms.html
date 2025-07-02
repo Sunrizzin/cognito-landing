@@ -4,40 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Use - Cognito</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      color: #222;
+
+<style>
+  :root {
+    --accent: #1E88E5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fff;
+    color: #000;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  header img {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  header p {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  nav {
+    background: #f8f8f8;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    padding: 20px 10px;
+    border-top: 1px solid #eee;
+  }
+
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5rem;
     }
+
     nav {
-      position: sticky;
-      top: 0;
-      text-align: right;
-      padding: 20px;
+      flex-direction: column;
+      align-items: center;
     }
-    nav a {
-      margin-left: 15px;
-      text-decoration: none;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    a {
-      color: #007aff;
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="terms.html">Terms of Use</a>
-    <a href="mailto:info@cognito.homes">Support</a>
-  </nav>
+<header style="background: #1E88E5; color: #fff; padding: 30px 20px; text-align: center;">
+  <h1 style="margin: 0; font-size: 2rem;">Cognito • AI Flashcard</h1>
+  <p style="margin-top: 8px; font-size: 1rem;">Simple AI Flashcards</p>
+</header>
 
+<nav style="background: #f8f8f8; padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+  <a href="index.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Home</a>
+  <a href="privacy.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Privacy Policy</a>
+  <a href="terms.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Terms of Use</a>
+  <a href="mailto:info@cognito.homes" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Support</a>
+</nav>
+
+<main>
   <h1>Terms of Use</h1>
   <p><strong>Effective date:</strong> July 02, 2025</p>
 
@@ -61,8 +133,13 @@
 
 <h2>Contact</h2>
 <p>For support or legal inquiries, email us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
+</main>
 
-
-  <p>&copy; 2025 Cognito by Aleksei Usanov</p>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Cognito • AI Flashcard by Aleksei Usanov</p>
+      <p><a href="mailto:info@cognito.homes">Send Feedback</a></p>
+    </div>
+  </footer>
 </body>
 </html>
