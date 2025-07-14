@@ -7,6 +7,24 @@
   <meta name="description" content="Cognito is an AI-powered flashcard app for smart, simple, and effective learning. Create flashcards with AI and study efficiently.">
   <meta name="keywords" content="AI flashcards, study app, Cognito app, smart learning, flashcard maker, AI study tool">
   <meta name="apple-itunes-app" content="app-id=6739693298">
+  <link rel="canonical" href="https://cognito.homes/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cognito – AI Flashcards for Smarter Learning" />
+  <meta property="og:description" content="Create and study flashcards with AI. Fast, private, and offline-friendly." />
+  <meta property="og:image" content="https://cognito.homes/logo.png" />
+  <meta property="og:url" content="https://cognito.homes/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cognito – AI Flashcards" />
+  <meta name="twitter:description" content="Smarter learning starts here." />
+  <meta name="twitter:image" content="https://cognito.homes/logo.png" />
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
   <title>Cognito • AI Flashcard App</title>
 
   <style>
@@ -52,6 +70,21 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    #nav-links {
+      display: flex;
       gap: 15px;
     }
 
@@ -86,28 +119,45 @@
 
       nav {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+      }
+
+      #menu-toggle {
+        display: block;
+      }
+
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      #nav-links.active {
+        display: flex;
       }
     }
   </style>
 </head>
 
 <body>
-
 <header>
   <h1>Cognito • AI Flashcard</h1>
   <p>Simple AI Flashcards</p>
 </header>
 
 <nav>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms of Use</a>
-  <a href="mailto:info@cognito.homes">Support</a>
+  <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <div id="nav-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="mailto:info@cognito.homes">Support</a>
+  </div>
 </nav>
 
 <main>
   <h2>Smarter learning starts here</h2>
-  <p>Cognito helps you create and study flashcards with AI. Fast, simple, and offline-friendly — no accounts, no tracking. Enhance your memory and boost your learning using AI-generated cards tailored to your needs.</p>
+  <p>Cognito helps you create and study flashcards with AI. Fast, simple, and offline-friendly - no accounts, no tracking. Enhance your memory and boost your learning using AI-generated cards tailored to your needs.</p>
 
   <p>Perfect for language learners, students, and lifelong learners. Whether you're studying for an exam or picking up a new skill, Cognito makes learning efficient and enjoyable.</p>
 
@@ -121,7 +171,7 @@
 <div style="background: #FFF3CD; border-left: 6px solid #FFB300; padding: 15px 20px; margin-bottom: 30px; border-radius: 6px;">
   <strong>🎉 Subscription Price Drop!</strong><br />
   Weekly: <s>$5</s> → <strong>$2</strong> &nbsp;&nbsp; Monthly: <s>$10</s> → <strong>$5</strong> &nbsp;&nbsp; Yearly: <s>$50</s> → <strong>$30</strong><br />
-  Unlock the full power of Cognito for less — limited time only!
+  Unlock the full power of Cognito for less!
 </div>
 
 <footer class="site-footer">
@@ -130,6 +180,15 @@
     <p><a href="mailto:info@cognito.homes">Send Feedback</a></p>
   </div>
 </footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
