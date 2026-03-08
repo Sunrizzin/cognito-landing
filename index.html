@@ -4,184 +4,567 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Cognito Team">
-  <meta name="description" content="Cognito is an AI-powered flashcard app for smart, simple, and effective learning. Create flashcards with AI and study efficiently.">
-  <meta name="keywords" content="AI flashcards, study app, Cognito app, smart learning, flashcard maker, AI study tool">
+  <meta name="description" content="Cognito is an AI-powered flashcard app with spaced repetition. Generate cards from text and images, study with Quiz and Type Answer modes, track progress with advanced analytics.">
+  <meta name="keywords" content="AI flashcards, spaced repetition, FSRS, study app, Cognito, flashcard maker, AI study tool, Anki alternative, quiz mode, image occlusion">
   <meta name="apple-itunes-app" content="app-id=6739693298">
+  <meta name="theme-color" content="#0a0a1a">
   <link rel="canonical" href="https://cognito.homes/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Cognito – AI Flashcards for Smarter Learning" />
-  <meta property="og:description" content="Create and study flashcards with AI. Fast, private, and offline-friendly." />
+  <meta property="og:title" content="Cognito — AI Flashcards with Spaced Repetition" />
+  <meta property="og:description" content="Generate flashcards with AI, study with FSRS spaced repetition, track your progress. Free on iOS." />
   <meta property="og:image" content="https://cognito.homes/logo-new.png" />
   <meta property="og:url" content="https://cognito.homes/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cognito: Memory Boost" />
-  <meta name="twitter:description" content="Study smarter, retain longer" />
+  <meta name="twitter:title" content="Cognito — AI Flashcards with Spaced Repetition" />
+  <meta name="twitter:description" content="Generate flashcards with AI, study smarter with FSRS, track your progress." />
   <meta name="twitter:image" content="https://cognito.homes/logo-new.png" />
 
-  <link rel="icon" href="logo-new.png" type="image/png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="logo-new.png" />
 
-  <title>Cognito</title>
+  <title>Cognito — AI Flashcards with Spaced Repetition</title>
 
   <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --accent: #1E88E5;
+      --bg: #0a0a1a;
+      --bg-light: #111128;
+      --surface: rgba(255,255,255,0.04);
+      --surface-hover: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.08);
+      --border-light: rgba(255,255,255,0.12);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #55556a;
+      --accent: #4A90FF;
+      --accent-light: #6BA5FF;
+      --accent-glow: rgba(74,144,255,0.15);
+      --green: #34D399;
+      --orange: #FBBF24;
+      --pink: #F472B6;
+      --cyan: #22D3EE;
+      --purple: #A78BFA;
+      --radius: 16px;
+      --radius-sm: 10px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fff;
-      color: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    header {
-      background: var(--accent);
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #fff;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-    header p {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #fff;
-    }
-
+    /* === NAV === */
     nav {
-      background: #f8f8f8;
-      padding: 10px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(10,10,26,0.8);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-weight: 800; font-size: 1.25rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      font-size: 0.9rem; color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent); color: #fff !important;
+      padding: 8px 20px; border-radius: 8px;
+      font-weight: 600; font-size: 0.85rem;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+    .menu-toggle {
+      display: none; background: none; border: none;
+      color: var(--text); font-size: 1.5rem; cursor: pointer;
     }
 
-    #menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    #nav-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    footer {
+    /* === HERO === */
+    .hero {
+      padding: 160px 0 100px;
       text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      padding: 20px 10px;
-      border-top: 1px solid #eee;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 20px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(74,144,255,0.2);
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--accent-light);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 600px; margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero-buttons a img { height: 48px; }
+    .btn-ghost {
+      display: inline-flex; align-items: center;
+      padding: 12px 28px; border-radius: 10px;
+      border: 1px solid var(--border-light);
+      color: var(--text); font-weight: 600; font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Hero background orbs */
+    .hero::before, .hero::after {
+      content: ''; position: absolute; border-radius: 50%;
+      filter: blur(100px); opacity: 0.15; pointer-events: none;
+    }
+    .hero::before {
+      width: 500px; height: 500px;
+      background: var(--accent);
+      top: -100px; left: -150px;
+    }
+    .hero::after {
+      width: 400px; height: 400px;
+      background: var(--purple);
+      bottom: -80px; right: -100px;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
+    /* === STATS BAR === */
+    .stats {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px; text-align: center;
+    }
+    .stat-label {
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+    .stat-value {
+      font-size: 1.1rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--text), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    /* === SECTIONS === */
+    .section { padding: 100px 0; }
+    .section-header {
+      text-align: center; margin-bottom: 60px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; margin-bottom: 12px;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 550px; margin: 0 auto;
+      font-size: 1.05rem;
+    }
 
-      #menu-toggle {
-        display: block;
-      }
+    /* === FEATURES === */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all 0.25s;
+    }
+    .feature-card:hover {
+      border-color: var(--border-light);
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;
+    }
+    .icon-blue { background: rgba(74,144,255,0.12); }
+    .icon-green { background: rgba(52,211,153,0.12); }
+    .icon-purple { background: rgba(167,139,250,0.12); }
+    .icon-pink { background: rgba(244,114,182,0.12); }
+    .icon-orange { background: rgba(251,191,36,0.12); }
+    .icon-cyan { background: rgba(34,211,238,0.12); }
 
-      #nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
+    /* === HOW IT WORKS === */
+    .how-it-works { background: var(--bg-light); }
+    .steps { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+    .step {
+      flex: 1; min-width: 250px; max-width: 320px;
+      text-align: center; padding: 32px 24px;
+    }
+    .step-number {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--accent-glow);
+      border: 2px solid var(--accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.1rem;
+      color: var(--accent-light);
+      margin-bottom: 20px;
+    }
+    .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .step p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
-      #nav-links.active {
-        display: flex;
+    /* === PRICING === */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 24px; max-width: 800px; margin: 0 auto;
+    }
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+    }
+    .price-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, rgba(74,144,255,0.06), rgba(167,139,250,0.06));
+    }
+    .price-tag {
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent-light);
+      font-weight: 700; margin-bottom: 8px;
+    }
+    .price-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; }
+    .price-list { list-style: none; padding: 0; }
+    .price-list li {
+      padding: 8px 0; font-size: 0.9rem; color: var(--text-muted);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .price-list li::before {
+      content: '✓'; color: var(--green); font-weight: 700;
+      flex-shrink: 0;
+    }
+    .price-card.featured .price-list li::before {
+      color: var(--accent-light);
+    }
+
+    /* === CTA === */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; width: 500px; height: 500px;
+      background: var(--accent); border-radius: 50%;
+      filter: blur(150px); opacity: 0.08;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; margin-bottom: 12px;
+      position: relative;
+    }
+    .cta-section p {
+      color: var(--text-muted); margin-bottom: 32px;
+      font-size: 1.05rem; position: relative;
+    }
+    .cta-section a { position: relative; }
+    .cta-section a img { height: 52px; }
+
+    /* === FOOTER === */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { font-size: 0.85rem; color: var(--text-dim); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.85rem; color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    /* === ANIMATIONS === */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; flex-direction: column; position: absolute;
+        top: 60px; left: 0; right: 0; background: rgba(10,10,26,0.95);
+        padding: 20px 24px; gap: 16px;
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(20px);
       }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: block; }
+      .features-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .hero { padding: 130px 0 70px; }
+      .section { padding: 70px 0; }
+      .steps { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 
 <body>
-<header>
-  <h1>Cognito: Memory Boost</h1>
-  <p>Study smarter, retain longer</p>
-</header>
 
+<!-- NAV -->
 <nav>
-  <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-  <div id="nav-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Use</a>
-    <a href="mailto:info@cognito.homes">Support</a>
+  <div class="nav-inner">
+    <div class="logo">COGNI<span>TO</span></div>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298" class="nav-cta">Download</a>
+    </div>
   </div>
 </nav>
 
-<main>
-  <h2>Smarter learning starts here</h2>
-  <p>Cognito helps you create and study flashcards with AI. Fast, simple, and offline-friendly - no accounts, no tracking. Enhance your memory and boost your learning using AI-generated cards tailored to your needs.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">&#9889; AI-Powered Flashcards</div>
+    <h1>Study smarter.<br><em>Remember everything.</em></h1>
+    <p class="hero-sub">Create flashcards with AI, master them with science-backed spaced repetition, and track your progress with detailed analytics. All on your iPhone.</p>
+    <div class="hero-buttons">
+      <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
+        <img src="AppStoreButton.svg" alt="Download on the App Store">
+      </a>
+      <a href="#features" class="btn-ghost">See features &#8595;</a>
+    </div>
+  </div>
+</section>
 
-  <p>Perfect for language learners, students, and lifelong learners. Whether you're studying for an exam or picking up a new skill, Cognito makes learning efficient and enjoyable.</p>
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-label">Algorithm</div>
+        <div class="stat-value">FSRS</div>
+      </div>
+      <div>
+        <div class="stat-label">Card Types</div>
+        <div class="stat-value">6 Types</div>
+      </div>
+      <div>
+        <div class="stat-label">Study Modes</div>
+        <div class="stat-value">4 Modes</div>
+      </div>
+      <div>
+        <div class="stat-label">Generation</div>
+        <div class="stat-value">AI-Powered</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="appstore-button">
+<!-- FEATURES -->
+<section id="features" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Everything you need to learn effectively</h2>
+      <p>Powerful AI tools combined with proven learning science.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-blue">&#10024;</div>
+        <h3>AI Card Generation</h3>
+        <p>Generate flashcards from any topic or image. Describe what you want to learn and AI creates structured cards instantly.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-green">&#129504;</div>
+        <h3>Smart Spaced Repetition</h3>
+        <p>FSRS algorithm schedules reviews at optimal intervals. Study less, remember more with science-backed spacing.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-purple">&#127919;</div>
+        <h3>Quiz & Type Answer</h3>
+        <p>AI generates quiz options and checks typed answers for meaning, not just exact match. Active recall at its best.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-pink">&#128444;&#65039;</div>
+        <h3>Diagram to Cards</h3>
+        <p>Upload a labeled diagram or image and AI turns each element into a separate flashcard automatically.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-orange">&#128200;</div>
+        <h3>Analytics & Progress</h3>
+        <p>Heatmaps, retention trends, weak topics, streaks. Know exactly where you stand and what needs attention.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-cyan">&#128229;</div>
+        <h3>Import from Anki</h3>
+        <p>Bring your existing decks. Import .apkg files from Anki or CSV files with full tag support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="section how-it-works">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>How it works</h2>
+      <p>Three steps to smarter studying.</p>
+    </div>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-number">1</div>
+        <h3>Add your cards</h3>
+        <p>Create cards manually, generate them with AI from any topic or image, or import your existing Anki decks.</p>
+      </div>
+      <div class="step fade-in">
+        <div class="step-number">2</div>
+        <h3>Study smart</h3>
+        <p>FSRS schedules your reviews. Choose from Classic, Compact, Quiz, or Type Answer mode to match your style.</p>
+      </div>
+      <div class="step fade-in">
+        <div class="step-number">3</div>
+        <h3>Track progress</h3>
+        <p>See your study heatmap, retention trends, and weak topics. Stay motivated with streaks and daily goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Free to start, powerful to grow</h2>
+      <p>Core features are free forever. Unlock the full potential with Premium.</p>
+    </div>
+    <div class="pricing-grid fade-in">
+      <div class="price-card">
+        <div class="price-tag">Free</div>
+        <h3>Get started</h3>
+        <ul class="price-list">
+          <li>Create & study flashcards</li>
+          <li>FSRS spaced repetition</li>
+          <li>Classic & Compact study modes</li>
+          <li>3 AI generations per day</li>
+          <li>Dashboard & streaks</li>
+          <li>iOS widgets</li>
+          <li>Import from CSV</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-tag">Premium</div>
+        <h3>Full power</h3>
+        <ul class="price-list">
+          <li>Unlimited AI card generation</li>
+          <li>Quiz Mode & Type Answer</li>
+          <li>AI Tutor explanations</li>
+          <li>Diagram to Cards</li>
+          <li>Import from Anki (.apkg)</li>
+          <li>Advanced analytics & trends</li>
+          <li>Premium color themes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to study smarter?</h2>
+    <p>Download Cognito and start learning with AI today.</p>
     <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
-      <img src="AppStoreButton.svg" alt="Download Cognito on the App Store">
+      <img src="AppStoreButton.svg" alt="Download on the App Store">
     </a>
   </div>
-</main>
+</section>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <p>&copy; 2026 Cognito: Memory Boost by Aleksei Usanov</p>
-    <p><a href="mailto:info@cognito.homes">Send Feedback</a></p>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">&copy; 2026 Cognito by Aleksei Usanov</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:info@cognito.homes">Support</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
+  // Mobile menu toggle
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 </body>

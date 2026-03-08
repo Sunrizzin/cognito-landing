@@ -3,142 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Use - Cognito</title>
+  <meta name="theme-color" content="#0a0a1a">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Terms of Use — Cognito</title>
 
-<style>
-  :root {
-    --accent: #1E88E5;
-  }
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #fff;
-    color: #000;
-    line-height: 1.6;
-  }
-
-  header {
-    background: var(--accent);
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  header img {
-    width: 64px;
-    height: 64px;
-    border-radius: 14px;
-    margin-bottom: 10px;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: #fff;
-  }
-
-  header p {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: #fff;
-  }
-
-  nav {
-    background: #f8f8f8;
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  nav a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #888;
-    padding: 20px 10px;
-    border-top: 1px solid #eee;
-  }
-
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 1.5rem;
+    :root {
+      --bg: #0a0a1a;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #55556a;
+      --accent: #4A90FF;
+      --accent-light: #6BA5FF;
     }
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* === NAV === */
     nav {
-      flex-direction: column;
-      align-items: center;
+      background: rgba(10,10,26,0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: center; gap: 28px;
     }
-  }
-</style>
+    nav a { font-size: 0.9rem; color: var(--text-muted); transition: color 0.2s; }
+    nav a:hover { color: var(--text); text-decoration: none; }
 
+    /* === CONTENT === */
+    .page-header {
+      text-align: center; padding: 60px 24px 0;
+    }
+    .page-header h1 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .page-header .date {
+      font-size: 0.9rem; color: var(--text-dim);
+    }
+
+    main {
+      max-width: 720px; margin: 40px auto 60px;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-size: 1.2rem; font-weight: 700;
+      margin: 36px 0 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
+
+    p { margin-bottom: 14px; color: var(--text-muted); }
+    ul { margin: 0 0 14px 20px; color: var(--text-muted); }
+    li { margin-bottom: 6px; }
+
+    /* === FOOTER === */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+    footer a { color: var(--text-muted); }
+  </style>
 </head>
+
 <body>
 
-<header style="background: #1E88E5; color: #fff; padding: 30px 20px; text-align: center;">
-  <h1 style="margin: 0; font-size: 2rem;">Cognito: Memory Boost</h1>
-  <p style="margin-top: 8px; font-size: 1rem;">Study smarter, retain longer</p>
-</header>
-
-<nav style="background: #f8f8f8; padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-  <a href="index.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Home</a>
-  <a href="privacy.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Privacy Policy</a>
-  <a href="mailto:info@cognito.homes" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Support</a>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="mailto:info@cognito.homes">Support</a>
 </nav>
 
-<main>
+<div class="page-header">
   <h1>Terms of Use</h1>
-  <p><strong>Effective date:</strong> July 02, 2025</p>
+  <div class="date">Last updated: March 8, 2026</div>
+</div>
 
-  
-<p>These Terms of Use govern your access to and use of Cognito (“the App”). By using the App, you agree to these terms.</p>
+<main>
+  <p>These Terms of Use ("Terms") govern your access to and use of Cognito ("the App"). By downloading or using the App, you agree to these Terms.</p>
 
-<h2>Usage</h2>
-<p>Cognito is intended for personal, educational use. You may not copy, distribute, or resell the App or its content.</p>
+  <h2>About the App</h2>
+  <p>Cognito is an AI-powered flashcard application for iOS that helps users create, study, and retain knowledge using spaced repetition. The App includes:</p>
+  <ul>
+    <li>Flashcard creation (manual and AI-generated from text and images)</li>
+    <li>Spaced repetition study powered by the FSRS algorithm</li>
+    <li>Multiple study modes: Classic, Compact, Quiz, and Type Answer</li>
+    <li>AI Tutor for explanations after incorrect answers</li>
+    <li>Diagram-to-cards conversion from labeled images</li>
+    <li>Analytics dashboard with heatmaps, retention trends, and weak topic analysis</li>
+    <li>Import from Anki (.apkg) and CSV files</li>
+  </ul>
 
-<h2>Subscriptions</h2>
-<p>Cognito offers optional AI-powered features via a subscription. Subscriptions are billed through Apple using StoreKit and can be managed in your Apple ID settings.</p>
+  <h2>Eligibility</h2>
+  <p>You must be at least 13 years old to use the App. If you are under 18, you should review these Terms with a parent or guardian.</p>
 
-<h2>Privacy</h2>
-<p>We do not collect or store any personal data. All data stays on your device or within iCloud. Please refer to our <a href="privacy.html">Privacy Policy</a> for details.</p>
+  <h2>Usage</h2>
+  <p>Cognito is intended for personal, educational use. You agree not to:</p>
+  <ul>
+    <li>Copy, distribute, or resell the App or its content</li>
+    <li>Reverse-engineer, decompile, or disassemble the App</li>
+    <li>Use the App for any unlawful purpose</li>
+    <li>Attempt to circumvent subscription requirements or usage limits</li>
+  </ul>
 
-<h2>Limitation of Liability</h2>
-<p>We make no warranties about the accuracy or reliability of AI-generated content. Use the App at your own discretion and verify all important information independently.</p>
+  <h2>Subscriptions & Purchases</h2>
+  <p>Cognito offers optional Premium features via subscription. Available plans:</p>
+  <ul>
+    <li><strong>Weekly</strong> — auto-renewing weekly subscription</li>
+    <li><strong>Monthly</strong> — auto-renewing monthly subscription</li>
+    <li><strong>Yearly</strong> — auto-renewing yearly subscription</li>
+    <li><strong>Lifetime</strong> — one-time purchase, permanent access</li>
+  </ul>
+  <p>All subscriptions are billed through Apple's App Store using StoreKit. Payment is charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
+  <p>You can manage or cancel subscriptions in your Apple ID Settings > Subscriptions. We do not process payments or have access to your payment information.</p>
 
-<h2>Changes</h2>
-<p>We reserve the right to update these terms at any time. Continued use of the App constitutes acceptance of any changes.</p>
+  <h2>AI-Generated Content</h2>
+  <p>AI features in Cognito use Google's Gemini API to generate flashcards, quiz options, explanations, and answer evaluations. Important notices:</p>
+  <ul>
+    <li>AI-generated content may contain inaccuracies or errors</li>
+    <li>You are responsible for reviewing and verifying all AI-generated material</li>
+    <li>AI content should not be relied upon for medical, legal, financial, or safety-critical decisions</li>
+    <li>Free users receive 3 AI generations per day; Premium users have unlimited access</li>
+  </ul>
 
-<h2>Contact</h2>
-<p>For support or legal inquiries, email us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
+  <h2>User Content</h2>
+  <p>You retain ownership of all flashcards and study materials you create. When importing content from external sources (Anki decks, CSV files), you are responsible for ensuring you have the right to use that content.</p>
+  <p>Content you submit to AI features (topics, images, card text) is processed by Google Gemini API according to their terms. We do not store or access your content on our servers.</p>
+
+  <h2>Privacy</h2>
+  <p>Your data is stored locally on your device. We collect anonymous analytics to improve the App and use Google Gemini API for AI features. No personal information is collected. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+
+  <h2>Intellectual Property</h2>
+  <p>The App, its design, code, and branding are the intellectual property of the developer. You are granted a limited, non-exclusive, non-transferable license to use the App for personal purposes in accordance with these Terms.</p>
+
+  <h2>Limitation of Liability</h2>
+  <p>The App is provided "as is" without warranties of any kind. We make no guarantees about the accuracy, reliability, or completeness of AI-generated content. To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising from your use of the App.</p>
+
+  <h2>Termination</h2>
+  <p>We reserve the right to restrict or terminate your access to the App if you violate these Terms. You may stop using the App at any time by deleting it from your device.</p>
+
+  <h2>Changes to These Terms</h2>
+  <p>We may update these Terms from time to time. Changes will be reflected with an updated date at the top of this page. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+
+  <h2>Contact</h2>
+  <p>For support or legal inquiries, contact us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
 </main>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2026 Cognito: Memory Boost by Aleksei Usanov</p>
-      <p><a href="mailto:info@cognito.homes">Send Feedback</a></p>
-    </div>
-  </footer>
+<footer>
+  <p>&copy; 2026 Cognito by Aleksei Usanov &middot; <a href="mailto:info@cognito.homes">Send Feedback</a></p>
+</footer>
+
 </body>
 </html>

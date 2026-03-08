@@ -3,142 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy - Cognito</title>
+  <meta name="theme-color" content="#0a0a1a">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Privacy Policy — Cognito</title>
 
-<style>
-  :root {
-    --accent: #1E88E5;
-  }
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #fff;
-    color: #000;
-    line-height: 1.6;
-  }
-
-  header {
-    background: var(--accent);
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  header img {
-    width: 64px;
-    height: 64px;
-    border-radius: 14px;
-    margin-bottom: 10px;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: #fff;
-  }
-
-  header p {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: #fff;
-  }
-
-  nav {
-    background: #f8f8f8;
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  nav a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #888;
-    padding: 20px 10px;
-    border-top: 1px solid #eee;
-  }
-
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 1.5rem;
+    :root {
+      --bg: #0a0a1a;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #55556a;
+      --accent: #4A90FF;
+      --accent-light: #6BA5FF;
     }
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* === NAV === */
     nav {
-      flex-direction: column;
-      align-items: center;
+      background: rgba(10,10,26,0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: center; gap: 28px;
     }
-  }
-</style>
+    nav a { font-size: 0.9rem; color: var(--text-muted); transition: color 0.2s; }
+    nav a:hover { color: var(--text); text-decoration: none; }
 
+    /* === CONTENT === */
+    .page-header {
+      text-align: center; padding: 60px 24px 0;
+    }
+    .page-header h1 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .page-header .date {
+      font-size: 0.9rem; color: var(--text-dim);
+    }
+
+    main {
+      max-width: 720px; margin: 40px auto 60px;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-size: 1.2rem; font-weight: 700;
+      margin: 36px 0 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
+
+    p { margin-bottom: 14px; color: var(--text-muted); }
+    ul { margin: 0 0 14px 20px; color: var(--text-muted); }
+    li { margin-bottom: 6px; }
+
+    /* === FOOTER === */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+    footer a { color: var(--text-muted); }
+  </style>
 </head>
+
 <body>
 
-<header style="background: #1E88E5; color: #fff; padding: 30px 20px; text-align: center;">
-  <h1 style="margin: 0; font-size: 2rem;">Cognito: Memory Boost</h1>
-  <p style="margin-top: 8px; font-size: 1rem;">Study smarter, retain longer</p>
-</header>
-
-<nav style="background: #f8f8f8; padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-  <a href="index.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Home</a>
-  <a href="terms.html" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Terms of Use</a>
-  <a href="mailto:info@cognito.homes" style="color: #1E88E5; text-decoration: none; font-weight: 500;">Support</a>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="terms.html">Terms of Use</a>
+  <a href="mailto:info@cognito.homes">Support</a>
 </nav>
 
-<main>
+<div class="page-header">
   <h1>Privacy Policy</h1>
-  <p><strong>Effective date:</strong> July 02, 2025</p>
+  <div class="date">Last updated: March 8, 2026</div>
+</div>
 
-  
-<p>Cognito respects your privacy. This app does not collect, track, or share any personal information. All flashcards and progress are stored securely on your device or in your iCloud account (if enabled).</p>
+<main>
+  <p>Cognito ("the App") is built with privacy in mind. This policy explains what data is collected, how it is used, and your rights as a user.</p>
 
-<h2>Data Collection</h2>
-<p>Cognito does not collect any user data. No analytics tools, advertising SDKs, or third-party tracking systems are used.</p>
+  <h2>Local Data Storage</h2>
+  <p>Your flashcards, study history, settings, and progress are stored locally on your device using Apple's SwiftData framework. This data stays on your device and is not transmitted to our servers.</p>
+  <p>If you enable iCloud, your data may sync across your devices through Apple's secure iCloud infrastructure. We do not have access to your iCloud data.</p>
 
-<h2>Accounts and Sync</h2>
-<p>No registration or login is required to use Cognito. Your data is stored locally and optionally synchronized through your iCloud account using Apple’s secure infrastructure.</p>
+  <h2>Anonymous Analytics</h2>
+  <p>Cognito collects anonymous usage events through Firebase Analytics to help us understand how the app is used and improve the experience. These events include:</p>
+  <ul>
+    <li>Study sessions (start, completion, accuracy)</li>
+    <li>Feature usage (card creation, AI generation, import)</li>
+    <li>Settings changes (theme, study mode, daily goal)</li>
+    <li>Subscription events (paywall views, purchases)</li>
+  </ul>
+  <p>No personally identifiable information (PII) is collected. Events do not contain your name, email, card content, or any data that could identify you. We use this data solely to improve the App.</p>
 
-<h2>Purchases and Subscriptions</h2>
-<p>AI-powered features are available via optional subscription. All purchases are handled securely using Apple’s StoreKit. We do not store or access any payment information.</p>
+  <h2>AI Features & Google Gemini</h2>
+  <p>AI-powered features (card generation, AI Tutor, Quiz Mode, answer checking, diagram analysis) are processed through Google's Gemini API. When you use these features, the following data is sent to Google:</p>
+  <ul>
+    <li>Text prompts (topics you want to study)</li>
+    <li>Images you upload for card generation or diagram analysis</li>
+    <li>Card content for restructuring, rephrasing, or answer validation</li>
+  </ul>
+  <p>No user IDs, device identifiers, or personal information are included in these requests. Data is processed according to <a href="https://ai.google.dev/gemini-api/terms">Google's Gemini API Terms</a>.</p>
 
-<h2>Third-Party Libraries</h2>
-<p>Cognito uses only official Apple frameworks provided by iOS/macOS. No third-party libraries are included.</p>
+  <h2>Purchases & Subscriptions</h2>
+  <p>Premium features are available via optional subscriptions managed through Apple's StoreKit. All payment processing is handled entirely by Apple. We do not receive, store, or have access to your payment information, credit card details, or Apple ID.</p>
 
-<h2>Your Rights</h2>
-<p>You retain full control of your data. Since no information is collected or stored by us, there is nothing to delete or export on our end.</p>
+  <h2>Third-Party Services</h2>
+  <p>Cognito integrates the following third-party services:</p>
+  <ul>
+    <li><strong>Firebase Analytics</strong> — anonymous usage analytics (Google)</li>
+    <li><strong>Firebase AppCheck</strong> — app integrity verification (Google)</li>
+    <li><strong>Google Gemini API</strong> — AI card generation and study features</li>
+    <li><strong>Apple StoreKit</strong> — subscription and purchase management</li>
+  </ul>
+  <p>No advertising SDKs, ad networks, or user tracking services are used.</p>
 
-<h2>Contact</h2>
-<p>For questions or concerns, contact us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
+  <h2>Data We Do Not Collect</h2>
+  <p>Cognito does not collect or store:</p>
+  <ul>
+    <li>Names, email addresses, or contact information</li>
+    <li>Location data</li>
+    <li>Device identifiers linked to personal data</li>
+    <li>Browsing or search history</li>
+    <li>Your flashcard content (stored only on your device)</li>
+  </ul>
+
+  <h2>Your Rights</h2>
+  <p>Since we do not collect personal data or maintain user accounts, there is no personal information to access, export, or delete on our end. Your study data is fully under your control on your device.</p>
+  <p>You can delete all app data at any time by removing the app from your device.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Cognito is suitable for users aged 13 and older. We do not knowingly collect data from children under 13. If you believe a child under 13 has used AI features that transmitted data to third-party services, please contact us.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes will be reflected with an updated date at the top of this page. Continued use of the App constitutes acceptance of any changes.</p>
+
+  <h2>Contact</h2>
+  <p>For questions or concerns about privacy, contact us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
 </main>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2026 Cognito: Memory Boost by Aleksei Usanov</p>
-      <p><a href="mailto:info@cognito.homes">Send Feedback</a></p>
-    </div>
-  </footer>
+<footer>
+  <p>&copy; 2026 Cognito by Aleksei Usanov &middot; <a href="mailto:info@cognito.homes">Send Feedback</a></p>
+</footer>
+
 </body>
 </html>
