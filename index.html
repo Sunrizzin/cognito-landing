@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Cognito Team">
-  <meta name="description" content="Cognito is an AI-powered flashcard app with spaced repetition. Generate cards from text and images, study with Quiz and Type Answer modes, track progress with advanced analytics.">
-  <meta name="keywords" content="AI flashcards, spaced repetition, FSRS, study app, Cognito, flashcard maker, AI study tool, Anki alternative, quiz mode, image occlusion">
+  <meta name="description" content="Cognito is an AI-powered flashcard app with spaced repetition. Generate cards from text, images, and diagrams. Study with Quiz, Type Answer, and Classic modes. Track progress with heatmaps and achievements. Free on iPhone & iPad.">
+  <meta name="keywords" content="AI flashcards, spaced repetition, FSRS, study app, Cognito, flashcard maker, AI study tool, Anki alternative, quiz mode, image occlusion, iPad flashcards, community decks, text to speech flashcards">
   <meta name="apple-itunes-app" content="app-id=6739693298">
   <meta name="theme-color" content="#0a0a1a">
   <link rel="canonical" href="https://cognito.homes/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Cognito — AI Flashcards with Spaced Repetition" />
-  <meta property="og:description" content="Generate flashcards with AI, study with FSRS spaced repetition, track your progress. Free on iOS." />
+  <meta property="og:description" content="Generate flashcards with AI, study with FSRS spaced repetition, track your progress. Free on iPhone & iPad." />
   <meta property="og:image" content="https://cognito.homes/logo-new.png" />
   <meta property="og:url" content="https://cognito.homes/" />
   <meta property="og:type" content="website" />
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cognito — AI Flashcards with Spaced Repetition" />
-  <meta name="twitter:description" content="Generate flashcards with AI, study smarter with FSRS, track your progress." />
+  <meta name="twitter:description" content="Generate flashcards with AI, study smarter with FSRS, track your progress. Free on iPhone & iPad." />
   <meta name="twitter:image" content="https://cognito.homes/logo-new.png" />
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -41,9 +41,9 @@
       --text: #f0f0f5;
       --text-muted: #8888a0;
       --text-dim: #55556a;
-      --accent: #4A90FF;
-      --accent-light: #6BA5FF;
-      --accent-glow: rgba(74,144,255,0.15);
+      --accent: #FF6B35;
+      --accent-light: #FF8F5E;
+      --accent-glow: rgba(255,107,53,0.15);
       --green: #34D399;
       --orange: #FBBF24;
       --pink: #F472B6;
@@ -84,8 +84,11 @@
     .logo {
       font-weight: 800; font-size: 1.25rem;
       letter-spacing: 0.05em; text-transform: uppercase;
+      background: linear-gradient(135deg, #FF6B35, #E84530);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .logo span { color: var(--accent); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a {
       font-size: 0.9rem; color: var(--text-muted);
@@ -115,7 +118,7 @@
       display: inline-flex; align-items: center; gap: 8px;
       padding: 6px 16px; border-radius: 20px;
       background: var(--accent-glow);
-      border: 1px solid rgba(74,144,255,0.2);
+      border: 1px solid rgba(255,107,53,0.25);
       font-size: 0.8rem; font-weight: 600;
       color: var(--accent-light);
       margin-bottom: 24px;
@@ -128,7 +131,7 @@
     }
     .hero h1 em {
       font-style: normal;
-      background: linear-gradient(135deg, var(--accent), var(--purple));
+      background: linear-gradient(135deg, var(--accent), #E84530);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -136,7 +139,7 @@
     .hero-sub {
       font-size: clamp(1rem, 2vw, 1.2rem);
       color: var(--text-muted);
-      max-width: 600px; margin: 0 auto 36px;
+      max-width: 620px; margin: 0 auto 36px;
       line-height: 1.7;
     }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
@@ -153,7 +156,7 @@
     /* Hero background orbs */
     .hero::before, .hero::after {
       content: ''; position: absolute; border-radius: 50%;
-      filter: blur(100px); opacity: 0.15; pointer-events: none;
+      filter: blur(100px); opacity: 0.12; pointer-events: none;
     }
     .hero::before {
       width: 500px; height: 500px;
@@ -234,12 +237,15 @@
     .feature-card p {
       font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;
     }
-    .icon-blue { background: rgba(74,144,255,0.12); }
+    .icon-accent { background: rgba(255,107,53,0.12); }
     .icon-green { background: rgba(52,211,153,0.12); }
     .icon-purple { background: rgba(167,139,250,0.12); }
     .icon-pink { background: rgba(244,114,182,0.12); }
     .icon-orange { background: rgba(251,191,36,0.12); }
     .icon-cyan { background: rgba(34,211,238,0.12); }
+    .icon-blue { background: rgba(96,165,250,0.12); }
+    .icon-red { background: rgba(248,113,113,0.12); }
+    .icon-teal { background: rgba(45,212,191,0.12); }
 
     /* === HOW IT WORKS === */
     .how-it-works { background: var(--bg-light); }
@@ -273,14 +279,42 @@
     }
     .price-card.featured {
       border-color: var(--accent);
-      background: linear-gradient(135deg, rgba(74,144,255,0.06), rgba(167,139,250,0.06));
+      background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(232,69,48,0.06));
+      position: relative;
+    }
+    .price-badge {
+      position: absolute; top: -12px; right: 20px;
+      background: var(--accent); color: #fff;
+      padding: 4px 14px; border-radius: 20px;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
     }
     .price-tag {
       font-size: 0.75rem; text-transform: uppercase;
       letter-spacing: 0.1em; color: var(--accent-light);
       font-weight: 700; margin-bottom: 8px;
     }
-    .price-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; }
+    .price-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
+    .price-amount {
+      font-size: 0.95rem; color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .price-amount strong {
+      font-size: 1.8rem; font-weight: 800; color: var(--text);
+    }
+    .price-amount .period {
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+    .price-options {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .price-option {
+      padding: 4px 12px; border-radius: 6px;
+      font-size: 0.75rem; color: var(--text-muted);
+      border: 1px solid var(--border);
+      background: transparent;
+    }
     .price-list { list-style: none; padding: 0; }
     .price-list li {
       padding: 8px 0; font-size: 0.9rem; color: var(--text-muted);
@@ -292,6 +326,23 @@
     }
     .price-card.featured .price-list li::before {
       color: var(--accent-light);
+    }
+
+    /* === COMMUNITY === */
+    .community-banner {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .community-banner h3 {
+      font-size: 1.3rem; font-weight: 700; margin-bottom: 10px;
+    }
+    .community-banner p {
+      color: var(--text-muted); font-size: 0.95rem;
+      max-width: 500px; margin: 0 auto;
     }
 
     /* === CTA === */
@@ -365,6 +416,7 @@
       .section { padding: 70px 0; }
       .steps { flex-direction: column; align-items: center; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .community-banner { padding: 28px 20px; }
     }
   </style>
 </head>
@@ -374,7 +426,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="logo">COGNI<span>TO</span></div>
+    <div class="logo">COGNITO</div>
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     <div class="nav-links">
       <a href="#features">Features</a>
@@ -388,9 +440,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">&#9889; AI-Powered Flashcards</div>
+    <div class="hero-badge">&#10024; AI-Powered Flashcards</div>
     <h1>Study smarter.<br><em>Remember everything.</em></h1>
-    <p class="hero-sub">Create flashcards with AI, master them with science-backed spaced repetition, and track your progress with detailed analytics. All on your iPhone.</p>
+    <p class="hero-sub">Create flashcards with AI, master them with science-backed spaced repetition, and track your progress with detailed analytics. Free on iPhone &amp; iPad.</p>
     <div class="hero-buttons">
       <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
         <img src="AppStoreButton.svg" alt="Download on the App Store">
@@ -409,7 +461,7 @@
         <div class="stat-value">FSRS</div>
       </div>
       <div>
-        <div class="stat-label">Card Types</div>
+        <div class="stat-label">AI Generation</div>
         <div class="stat-value">6 Types</div>
       </div>
       <div>
@@ -417,8 +469,8 @@
         <div class="stat-value">4 Modes</div>
       </div>
       <div>
-        <div class="stat-label">Generation</div>
-        <div class="stat-value">AI-Powered</div>
+        <div class="stat-label">Platforms</div>
+        <div class="stat-value">iPhone &amp; iPad</div>
       </div>
     </div>
   </div>
@@ -432,36 +484,61 @@
       <p>Powerful AI tools combined with proven learning science.</p>
     </div>
     <div class="features-grid">
+
       <div class="feature-card fade-in">
-        <div class="feature-icon icon-blue">&#10024;</div>
+        <div class="feature-icon icon-accent">&#10024;</div>
         <h3>AI Card Generation</h3>
-        <p>Generate flashcards from any topic or image. Describe what you want to learn and AI creates structured cards instantly.</p>
+        <p>Generate flashcards from any topic, text, or image. Choose from 6 types: Q&A, cloze, associations, language learning, and more.</p>
       </div>
+
       <div class="feature-card fade-in">
         <div class="feature-icon icon-green">&#129504;</div>
         <h3>Smart Spaced Repetition</h3>
-        <p>FSRS algorithm schedules reviews at optimal intervals. Study less, remember more with science-backed spacing.</p>
+        <p>FSRS algorithm schedules reviews at optimal intervals. Cards progress from New to Learning, Review, and Mastered automatically.</p>
       </div>
+
       <div class="feature-card fade-in">
         <div class="feature-icon icon-purple">&#127919;</div>
-        <h3>Quiz & Type Answer</h3>
-        <p>AI generates quiz options and checks typed answers for meaning, not just exact match. Active recall at its best.</p>
+        <h3>Quiz &amp; Type Answer</h3>
+        <p>AI generates multiple-choice quizzes and checks typed answers by meaning, not just exact match. Active recall at its best.</p>
       </div>
+
       <div class="feature-card fade-in">
         <div class="feature-icon icon-pink">&#128444;&#65039;</div>
         <h3>Diagram to Cards</h3>
-        <p>Upload a labeled diagram or image and AI turns each element into a separate flashcard automatically.</p>
+        <p>Upload a labeled diagram and AI creates one card per element — hiding parts and asking you to name them. Perfect for anatomy, maps, and circuits.</p>
       </div>
+
       <div class="feature-card fade-in">
         <div class="feature-icon icon-orange">&#128200;</div>
-        <h3>Analytics & Progress</h3>
-        <p>Heatmaps, retention trends, weak topics, streaks. Know exactly where you stand and what needs attention.</p>
+        <h3>Analytics &amp; Achievements</h3>
+        <p>Heatmaps, retention trends, weak topics, streaks, daily goals. Unlock 30+ achievements across 6 categories as you study.</p>
       </div>
+
       <div class="feature-card fade-in">
         <div class="feature-icon icon-cyan">&#128229;</div>
-        <h3>Import from Anki</h3>
-        <p>Bring your existing decks. Import .apkg files from Anki or CSV files with full tag support.</p>
+        <h3>Import &amp; Export</h3>
+        <p>Bring your Anki decks (.apkg) or CSV/TSV files. Export your entire collection for backup. Full tag support preserved.</p>
       </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-blue">&#127760;</div>
+        <h3>Community Decks</h3>
+        <p>Share your decks with the community or download decks from others. Browse by topic, get updates when authors publish changes.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-teal">&#128266;</div>
+        <h3>Text-to-Speech</h3>
+        <p>Listen to your cards in any language. Auto-play front, back, or both. Adjustable speed — perfect for language learning.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-red">&#128293;</div>
+        <h3>Streaks &amp; Streak Freeze</h3>
+        <p>Build study consistency with daily streaks. Miss a day? Streak freeze saves your progress. Free users get 1/week, Premium gets unlimited.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -477,17 +554,17 @@
       <div class="step fade-in">
         <div class="step-number">1</div>
         <h3>Add your cards</h3>
-        <p>Create cards manually, generate them with AI from any topic or image, or import your existing Anki decks.</p>
+        <p>Create cards manually, generate them with AI from any topic, image, or diagram, or import your existing Anki decks.</p>
       </div>
       <div class="step fade-in">
         <div class="step-number">2</div>
         <h3>Study smart</h3>
-        <p>FSRS schedules your reviews. Choose from Classic, Compact, Quiz, or Type Answer mode to match your style.</p>
+        <p>FSRS schedules your reviews. Choose Classic, Compact, Quiz, or Type Answer to match your style. Listen with TTS.</p>
       </div>
       <div class="step fade-in">
         <div class="step-number">3</div>
-        <h3>Track progress</h3>
-        <p>See your study heatmap, retention trends, and weak topics. Stay motivated with streaks and daily goals.</p>
+        <h3>Track &amp; share</h3>
+        <p>See heatmaps, retention trends, and weak topics. Unlock achievements. Share your best decks with the community.</p>
       </div>
     </div>
   </div>
@@ -501,33 +578,62 @@
       <p>Core features are free forever. Unlock the full potential with Premium.</p>
     </div>
     <div class="pricing-grid fade-in">
+
       <div class="price-card">
         <div class="price-tag">Free</div>
         <h3>Get started</h3>
+        <div class="price-amount">
+          <strong>$0</strong> <span class="period">forever</span>
+        </div>
         <ul class="price-list">
-          <li>Create & study flashcards</li>
+          <li>Unlimited manual card creation</li>
           <li>FSRS spaced repetition</li>
-          <li>Classic & Compact study modes</li>
-          <li>3 AI generations per day</li>
-          <li>Dashboard & streaks</li>
+          <li>Classic &amp; Compact study modes</li>
+          <li>3 AI generation saves per day</li>
+          <li>Image-to-cards</li>
+          <li>Folders, tags &amp; organization</li>
+          <li>Streaks, daily goals &amp; 1 freeze/week</li>
+          <li>Achievements (30+ milestones)</li>
+          <li>Text-to-speech</li>
+          <li>Community deck sharing</li>
           <li>iOS widgets</li>
-          <li>Import from CSV</li>
+          <li>Export</li>
         </ul>
       </div>
+
       <div class="price-card featured">
+        <div class="price-badge">Most popular</div>
         <div class="price-tag">Premium</div>
         <h3>Full power</h3>
+        <div class="price-amount">
+          <strong>$4.99</strong> <span class="period">/month</span>
+        </div>
+        <div class="price-options">
+          <span class="price-option">$1.99/week</span>
+          <span class="price-option">$29.99/year</span>
+          <span class="price-option">$79.99 lifetime</span>
+        </div>
         <ul class="price-list">
+          <li>Everything in Free, plus:</li>
           <li>Unlimited AI card generation</li>
-          <li>Quiz Mode & Type Answer</li>
+          <li>Quiz Mode &amp; Type Answer</li>
+          <li>Diagram to Cards (image occlusion)</li>
           <li>AI Tutor explanations</li>
-          <li>Diagram to Cards</li>
-          <li>Import from Anki (.apkg)</li>
-          <li>Advanced analytics & trends</li>
+          <li>Anki &amp; CSV/TSV import</li>
+          <li>Advanced analytics &amp; trends</li>
+          <li>Unlimited streak freezes</li>
           <li>Premium color themes</li>
+          <li>Weekly summary notifications</li>
         </ul>
       </div>
+
     </div>
+
+    <div class="community-banner fade-in">
+      <h3>&#127760; Community Decks</h3>
+      <p>Browse and download decks shared by other learners. Publish your own decks for others to study. Free for everyone.</p>
+    </div>
+
   </div>
 </section>
 
@@ -535,7 +641,7 @@
 <section class="cta-section">
   <div class="container">
     <h2>Ready to study smarter?</h2>
-    <p>Download Cognito and start learning with AI today.</p>
+    <p>Join thousands of learners. Free on iPhone &amp; iPad.</p>
     <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
       <img src="AppStoreButton.svg" alt="Download on the App Store">
     </a>
