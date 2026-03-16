@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Cognito Team">
-  <meta name="description" content="Cognito is an AI-powered flashcard app with spaced repetition. Generate cards from text, images, and diagrams. Study with Quiz, Type Answer, and Classic modes. Track progress with heatmaps and achievements. Free on iPhone & iPad.">
-  <meta name="keywords" content="AI flashcards, spaced repetition, FSRS, study app, Cognito, flashcard maker, AI study tool, Anki alternative, quiz mode, image occlusion, iPad flashcards, community decks, text to speech flashcards">
+  <meta name="description" content="Cognito is an AI-powered flashcard app with spaced repetition. Generate cards from text, images, YouTube videos, PDFs, audio, webpages, and arXiv papers. Study with Quiz, Type Answer, and Classic modes. Track progress with heatmaps and 63 achievements. Free on iPhone & iPad.">
+  <meta name="keywords" content="AI flashcards, spaced repetition, FSRS, study app, Cognito, flashcard maker, AI study tool, Anki alternative, quiz mode, image occlusion, iPad flashcards, community decks, text to speech flashcards, YouTube to flashcards, PDF to flashcards, lecture to flashcards, audio to flashcards">
   <meta name="apple-itunes-app" content="app-id=6739693298">
   <meta name="theme-color" content="#08080f">
   <link rel="canonical" href="https://cognito.homes/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Cognito — AI Flashcards with Spaced Repetition" />
-  <meta property="og:description" content="Generate flashcards with AI, study with FSRS spaced repetition, track your progress. Free on iPhone & iPad." />
+  <meta property="og:description" content="Generate flashcards from text, YouTube, PDFs, audio & more. Study with FSRS spaced repetition, track your progress. Free on iPhone & iPad." />
   <meta property="og:image" content="https://cognito.homes/logo-new.png" />
   <meta property="og:url" content="https://cognito.homes/" />
   <meta property="og:type" content="website" />
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cognito — AI Flashcards with Spaced Repetition" />
-  <meta name="twitter:description" content="Generate flashcards with AI, study smarter with FSRS, track your progress. Free on iPhone & iPad." />
+  <meta name="twitter:description" content="Generate flashcards from text, YouTube, PDFs, audio & more. Study smarter with FSRS, track your progress. Free on iPhone & iPad." />
   <meta name="twitter:image" content="https://cognito.homes/logo-new.png" />
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Cognito",
-    "description": "AI-powered flashcard app with spaced repetition. Generate cards from text, images, and diagrams. Study with Quiz, Type Answer, and Classic modes.",
+    "description": "AI-powered flashcard app with spaced repetition. Generate cards from text, images, YouTube videos, PDFs, audio, webpages, and arXiv papers. Study with Quiz, Type Answer, and Classic modes.",
     "operatingSystem": "iOS",
     "applicationCategory": "EducationalApplication",
     "offers": [
@@ -700,6 +700,113 @@
       transform: translateY(-1px);
     }
 
+    /* ============= SOURCES GRID ============= */
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .source-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px 16px;
+      text-align: center;
+      transition: all 0.3s var(--ease-out);
+    }
+    .source-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+    .source-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .source-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .source-card p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+    .source-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .source-badge-free {
+      color: var(--green);
+      background: rgba(52, 211, 153, 0.1);
+    }
+
+    @media (max-width: 640px) {
+      .sources-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .source-card { padding: 18px 12px; }
+    }
+
+    /* ============= SOCIAL PROOF ============= */
+    .social-proof {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 28px 24px;
+      transition: all 0.3s var(--ease-out);
+    }
+    .review-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+    }
+    .review-stars {
+      color: #FBBF24;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .review-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .review-author {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    @media (max-width: 960px) {
+      .reviews-grid { grid-template-columns: 1fr; max-width: 480px; }
+    }
+
     /* ============= CTA ============= */
     .cta-section {
       padding: 120px 0;
@@ -952,6 +1059,7 @@
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#sources">Sources</a>
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298" class="nav-cta">Download Free</a>
@@ -970,7 +1078,7 @@
       AI-Powered Flashcards
     </div>
     <h1>Generate 30 cards in seconds.<br><em>Remember them forever.</em></h1>
-    <p class="hero-sub">Type any topic, snap a photo, or upload a diagram — AI creates flashcards instantly. Then master them with science-backed spaced repetition.</p>
+    <p class="hero-sub">Paste a YouTube link, upload a PDF, record a lecture, snap a photo, or just type a topic — AI creates flashcards instantly. Then master them with science-backed spaced repetition.</p>
     <div class="hero-buttons">
       <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
         <img src="AppStoreButton.svg" alt="Download on the App Store">
@@ -998,8 +1106,8 @@
         <div class="stat-value stat-accent">FSRS</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">Card Types</div>
-        <div class="stat-value">6 Built-in</div>
+        <div class="stat-label">AI Sources</div>
+        <div class="stat-value">7 Input Types</div>
       </div>
       <div class="stat-item">
         <div class="stat-label">Study Modes</div>
@@ -1029,7 +1137,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L14.5 8.5L20 9.27L16 13.14L16.94 18.64L12 16L7.06 18.64L8 13.14L4 9.27L9.5 8.5Z" fill="currentColor" stroke="none" style="fill: #FF6B35;"/></svg>
         </div>
         <h3>AI Card Generation</h3>
-        <p>Generate flashcards from any topic, text, or image. Six card types including Q&amp;A, cloze, and true/false.</p>
+        <p>Generate flashcards from text, YouTube videos, PDFs, audio, images, webpages, and arXiv papers. Six card types including Q&amp;A, cloze, and associations.</p>
         <div class="feature-screenshot">
           <img src="screenshots/Results.png" alt="AI-generated flashcards">
         </div>
@@ -1097,6 +1205,67 @@
   </div>
 </section>
 
+<!-- AI SOURCES -->
+<section id="sources" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">7 AI Sources</div>
+      <h2>Turn anything into flashcards</h2>
+      <p>Paste a link, upload a file, or just type — AI handles the rest.</p>
+    </div>
+    <div class="sources-grid stagger">
+      <div class="source-card reveal">
+        <span class="source-icon">💬</span>
+        <h4>Text</h4>
+        <p>Type any topic or paste notes</p>
+        <span class="source-badge source-badge-free">Free</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">📸</span>
+        <h4>Image</h4>
+        <p>Snap a photo of textbook or slides</p>
+        <span class="source-badge source-badge-free">Free</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">🔗</span>
+        <h4>Webpage</h4>
+        <p>Paste any URL — articles, docs, wikis</p>
+        <span class="source-badge source-badge-free">Free</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">▶️</span>
+        <h4>YouTube</h4>
+        <p>Paste a video link — AI watches it for you</p>
+        <span class="source-badge">Premium</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">📄</span>
+        <h4>PDF</h4>
+        <p>Upload textbooks, slides, papers</p>
+        <span class="source-badge">Premium</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">🎙️</span>
+        <h4>Audio</h4>
+        <p>Record lectures or upload audio files</p>
+        <span class="source-badge">Premium</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">📑</span>
+        <h4>arXiv</h4>
+        <p>Paste a paper link — key concepts extracted</p>
+        <span class="source-badge">Premium</span>
+      </div>
+      <div class="source-card reveal">
+        <span class="source-icon">🔍</span>
+        <h4>Web Search</h4>
+        <p>Google-powered fact checking during generation</p>
+        <span class="source-badge">Premium</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section id="how-it-works" class="section how-it-works">
   <div class="container">
@@ -1109,7 +1278,7 @@
       <div class="step reveal">
         <div class="step-number">1</div>
         <h3>Add your cards</h3>
-        <p>Create cards manually, generate them with AI from any topic, image, or diagram. You can also import existing Anki decks.</p>
+        <p>Create cards manually, or let AI generate them from a topic, YouTube video, PDF, audio recording, webpage, image, or arXiv paper. Import existing Anki decks too.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">2</div>
@@ -1146,10 +1315,10 @@
           <li>FSRS spaced repetition</li>
           <li>Classic &amp; Compact study modes</li>
           <li>3 AI generations per day</li>
-          <li>Image-to-cards</li>
+          <li>Image &amp; URL to cards</li>
           <li>Folders, tags &amp; organization</li>
           <li>Streaks &amp; daily goals</li>
-          <li>Achievements (30+ milestones)</li>
+          <li>63 achievements</li>
           <li>Text-to-speech</li>
           <li>Community deck sharing</li>
           <li>iOS widgets</li>
@@ -1172,6 +1341,9 @@
         <ul class="price-list">
           <li>Everything in Free, plus:</li>
           <li>Unlimited AI card generation</li>
+          <li>YouTube, PDF &amp; Audio → cards</li>
+          <li>arXiv papers → cards</li>
+          <li>Web Grounding (Google Search)</li>
           <li>Quiz Mode &amp; Type Answer</li>
           <li>Diagram to Cards</li>
           <li>AI Tutor explanations</li>
@@ -1179,11 +1351,37 @@
           <li>Advanced analytics &amp; trends</li>
           <li>Unlimited streak freezes</li>
           <li>Premium color themes</li>
-          <li>Weekly summary notifications</li>
         </ul>
         <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298" class="price-cta price-cta-premium">Start Free Trial</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Reviews</div>
+      <h2>Loved by students worldwide</h2>
+    </div>
+    <div class="reviews-grid stagger">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I used to spend hours making Anki cards. Now I just paste a YouTube lecture link and get perfect flashcards in seconds. Game changer for med school."</p>
+        <div class="review-author">— Pre-med student</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The PDF-to-cards feature saved my exam prep. I uploaded my textbook chapters and had a full study deck in minutes. The FSRS algorithm is way better than Anki's default."</p>
+        <div class="review-author">— Biology major</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Finally a flashcard app that looks beautiful AND works well. The quiz mode and AI tutor make studying actually engaging. My streak is at 45 days!"</p>
+        <div class="review-author">— Language learner</div>
+      </div>
     </div>
   </div>
 </section>
