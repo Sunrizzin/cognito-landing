@@ -4,29 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Cognito Team">
-  <meta name="description" content="Cognito is an AI-powered flashcard app with spaced repetition. Generate cards from text, images, YouTube videos, PDFs, audio, webpages, and arXiv papers. Study with Quiz, Type Answer, and Classic modes. Track progress with heatmaps and 63 achievements. Free on iPhone & iPad.">
-  <meta name="keywords" content="AI flashcards, spaced repetition, FSRS, study app, Cognito, flashcard maker, AI study tool, Anki alternative, quiz mode, image occlusion, iPad flashcards, community decks, text to speech flashcards, YouTube to flashcards, PDF to flashcards, lecture to flashcards, audio to flashcards">
+  <meta name="description" content="Cognito is an AI learning system that turns YouTube videos, PDFs, lectures, and notes into long-term memory. AI extracts key concepts, generates learning cards, and schedules reviews with FSRS spaced repetition. Free on iPhone & iPad.">
+  <meta name="keywords" content="AI learning app, AI flashcards, spaced repetition, FSRS, study app, Cognito, AI study tool, Anki alternative, YouTube to flashcards, PDF to flashcards, lecture to flashcards, audio to flashcards, AI memory system, learn from YouTube, learn from PDF">
   <meta name="apple-itunes-app" content="app-id=6739693298">
   <meta name="theme-color" content="#08080f">
   <link rel="canonical" href="https://cognito.homes/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Cognito — AI Flashcards with Spaced Repetition" />
-  <meta property="og:description" content="Generate flashcards from text, YouTube, PDFs, audio & more. Study with FSRS spaced repetition, track your progress. Free on iPhone & iPad." />
+  <meta property="og:title" content="Cognito — AI Learning System | Turn Anything Into Long-Term Memory" />
+  <meta property="og:description" content="AI that turns YouTube videos, PDFs, lectures, and notes into knowledge you actually retain. Powered by FSRS spaced repetition. Free on iPhone & iPad." />
   <meta property="og:image" content="https://cognito.homes/logo-new.png" />
   <meta property="og:url" content="https://cognito.homes/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cognito — AI Flashcards with Spaced Repetition" />
-  <meta name="twitter:description" content="Generate flashcards from text, YouTube, PDFs, audio & more. Study smarter with FSRS, track your progress. Free on iPhone & iPad." />
+  <meta name="twitter:title" content="Cognito — AI Learning System | Turn Anything Into Long-Term Memory" />
+  <meta name="twitter:description" content="AI that turns YouTube videos, PDFs, lectures, and notes into knowledge you actually retain. Powered by FSRS spaced repetition. Free on iPhone & iPad." />
   <meta name="twitter:image" content="https://cognito.homes/logo-new.png" />
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="logo-new.png" />
 
-  <title>Cognito — AI Flashcards with Spaced Repetition</title>
+  <title>Cognito — AI Learning System | Turn Anything Into Long-Term Memory</title>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Cognito",
-    "description": "AI-powered flashcard app with spaced repetition. Generate cards from text, images, YouTube videos, PDFs, audio, webpages, and arXiv papers. Study with Quiz, Type Answer, and Classic modes.",
+    "description": "AI learning system that turns YouTube videos, PDFs, lectures, and notes into long-term memory. Powered by FSRS spaced repetition with Quiz, Type Answer, and Classic modes.",
     "operatingSystem": "iOS",
     "applicationCategory": "EducationalApplication",
     "offers": [
@@ -700,6 +700,66 @@
       transform: translateY(-1px);
     }
 
+    /* ============= LEARNING PIPELINE ============= */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-wrap: nowrap;
+    }
+    .pipeline-step {
+      flex: 1;
+      text-align: center;
+      padding: 28px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all 0.3s var(--ease-out);
+      position: relative;
+    }
+    .pipeline-step:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+    .pipeline-emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .pipeline-step h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .pipeline-step p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+    .pipeline-arrow {
+      font-size: 1.4rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      padding: 0 10px;
+      opacity: 0.7;
+    }
+    .pipeline-step-accent {
+      border-color: var(--border-accent);
+      background: rgba(255,107,53,0.03);
+    }
+
+    @media (max-width: 640px) {
+      .pipeline { flex-direction: column; gap: 0; max-width: 320px; }
+      .pipeline-arrow { transform: rotate(90deg); padding: 6px 0; }
+      .pipeline-step { width: 100%; }
+    }
+
     /* ============= SOURCES GRID ============= */
     .sources-grid {
       display: grid;
@@ -1075,10 +1135,10 @@
   <div class="container hero-content">
     <div class="hero-badge">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="#FF8F5E"><path d="M12 0L14.59 8.41L23 12L14.59 15.59L12 24L9.41 15.59L1 12L9.41 8.41Z"/></svg>
-      AI-Powered Flashcards
+      AI Learning System
     </div>
-    <h1>Generate 30 cards in seconds.<br><em>Remember them forever.</em></h1>
-    <p class="hero-sub">Paste a YouTube link, upload a PDF, record a lecture, snap a photo, or just type a topic — AI creates flashcards instantly. Then master them with science-backed spaced repetition.</p>
+    <h1>Watch a lecture. Read a paper.<br><em>Know it forever.</em></h1>
+    <p class="hero-sub">Cognito uses AI to turn YouTube videos, PDFs, and your notes into knowledge you actually retain — with science-backed spaced repetition.</p>
     <div class="hero-buttons">
       <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
         <img src="AppStoreButton.svg" alt="Download on the App Store">
@@ -1110,7 +1170,7 @@
         <div class="stat-value">7 Input Types</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">Study Modes</div>
+        <div class="stat-label">Learning Modes</div>
         <div class="stat-value">4 Modes</div>
       </div>
       <div class="stat-item">
@@ -1126,8 +1186,8 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">Features</div>
-      <h2>Everything you need to learn effectively</h2>
-      <p>AI generation, spaced repetition, and active recall — in one beautifully designed app.</p>
+      <h2>A complete AI learning system</h2>
+      <p>From consuming content to retaining knowledge — AI handles the heavy lifting.</p>
     </div>
 
     <div class="features-hero-grid stagger">
@@ -1136,8 +1196,8 @@
         <div class="feature-hero-icon icon-accent">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L14.5 8.5L20 9.27L16 13.14L16.94 18.64L12 16L7.06 18.64L8 13.14L4 9.27L9.5 8.5Z" fill="currentColor" stroke="none" style="fill: #FF6B35;"/></svg>
         </div>
-        <h3>AI Card Generation</h3>
-        <p>Generate flashcards from text, YouTube videos, PDFs, audio, images, webpages, and arXiv papers. Six card types including Q&amp;A, cloze, and associations.</p>
+        <h3>AI Content Processing</h3>
+        <p>Feed it a YouTube video, PDF, audio lecture, webpage, or just type a topic. AI extracts key concepts and creates learning material automatically.</p>
         <div class="feature-screenshot">
           <img src="screenshots/Results.png" alt="AI-generated flashcards">
         </div>
@@ -1148,7 +1208,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h3>Smart Spaced Repetition</h3>
-        <p>FSRS algorithm schedules reviews right before you forget — so you study less but remember more.</p>
+        <p>FSRS algorithm schedules reviews right before you forget — so you learn less often but remember more.</p>
         <div class="feature-screenshot">
           <img src="screenshots/Spaced%20Repetition.png" alt="Spaced repetition study session">
         </div>
@@ -1205,13 +1265,48 @@
   </div>
 </section>
 
+<!-- LEARNING PIPELINE -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">The Learning Pipeline</div>
+      <h2>From content to long-term memory</h2>
+    </div>
+    <div class="pipeline reveal">
+      <div class="pipeline-step">
+        <span class="pipeline-emoji">📥</span>
+        <h4>Consume</h4>
+        <p>YouTube, PDF, audio, image, text, URL</p>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step pipeline-step-accent">
+        <span class="pipeline-emoji">🧠</span>
+        <h4>AI Understands</h4>
+        <p>Extracts concepts, generates explanations</p>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <span class="pipeline-emoji">🃏</span>
+        <h4>Cards Created</h4>
+        <p>Q&amp;A, cloze, quiz, true/false</p>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <span class="pipeline-emoji">♾️</span>
+        <h4>Remember</h4>
+        <p>FSRS schedules perfect reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AI SOURCES -->
 <section id="sources" class="section">
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">7 AI Sources</div>
-      <h2>Turn anything into flashcards</h2>
-      <p>Paste a link, upload a file, or just type — AI handles the rest.</p>
+      <h2>Turn anything into knowledge</h2>
+      <p>Paste a link, upload a file, or just type — AI extracts concepts and creates learning material.</p>
     </div>
     <div class="sources-grid stagger">
       <div class="source-card reveal">
@@ -1271,24 +1366,24 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">How it works</div>
-      <h2>Three steps to smarter studying</h2>
-      <p>From content to mastery in minutes.</p>
+      <h2>Consume. Understand. Remember.</h2>
+      <p>From raw content to long-term memory in three steps.</p>
     </div>
     <div class="steps stagger">
       <div class="step reveal">
         <div class="step-number">1</div>
-        <h3>Add your cards</h3>
-        <p>Create cards manually, or let AI generate them from a topic, YouTube video, PDF, audio recording, webpage, image, or arXiv paper. Import existing Anki decks too.</p>
+        <h3>Consume</h3>
+        <p>Add any content — a YouTube lecture, PDF textbook, audio recording, photo of your notes, or just type a topic. Import Anki decks too.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">2</div>
-        <h3>Study smart</h3>
-        <p>FSRS schedules your reviews at the optimal moment. Choose Classic, Compact, Quiz, or Type Answer to match your style.</p>
+        <h3>Understand</h3>
+        <p>AI extracts key concepts, generates explanations, and creates learning cards — Q&amp;A, cloze, quiz, and more. Review and edit before you start.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">3</div>
-        <h3>Track &amp; share</h3>
-        <p>See heatmaps, retention trends, and weak topics. Unlock achievements. Share your best decks with the community.</p>
+        <h3>Remember</h3>
+        <p>FSRS spaced repetition schedules reviews at the perfect moment. Track your progress with heatmaps, trends, and 63 achievements.</p>
       </div>
     </div>
   </div>
@@ -1379,7 +1474,7 @@
       </div>
       <div class="review-card reveal">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Finally a flashcard app that looks beautiful AND works well. The quiz mode and AI tutor make studying actually engaging. My streak is at 45 days!"</p>
+        <p class="review-text">"Finally a learning app that looks beautiful AND works well. The quiz mode and AI tutor make learning actually engaging. My streak is at 45 days!"</p>
         <div class="review-author">— Language learner</div>
       </div>
     </div>
@@ -1389,8 +1484,8 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="container reveal-scale">
-    <h2>Ready to study smarter?</h2>
-    <p>Free on iPhone &amp; iPad. No account required.</p>
+    <h2>Ready to learn smarter?</h2>
+    <p>Turn anything into long-term memory. Free on iPhone &amp; iPad.</p>
     <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
       <img src="AppStoreButton.svg" alt="Download on the App Store">
     </a>
